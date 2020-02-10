@@ -10,6 +10,15 @@ _{This is a detailed description of your application. Its purpose and usage.  Gi
 
 |   Behavior    |   Input     |     Output    |
 |--------------:|:-----------:|--------------:|
+|Create animal class that is one of 4 different options that has a name and starts as a dog|Create "Spot" |Creates a Dog named Spot. |
+|Value of attributes changes over time |Dog food property + 10, 20 seconds pass |Dog food property = 0 |
+|User can complete an action to bring a certain property back to its max value |Dog food property = 4, user "feeds" dog |Dog food property = 10 |
+|If food OR three other properties reach 0, dog object changes into a Cat object |Dog: food-5, play-0, bath-0, discipline-8, potty-0, sleep-3 |Dog -> Cat with full values of all properties. |
+|If food OR 2 other properties fall to 0, Cat turns into a Fish |Cat: food:9, snuggles-0, play-5, potty-0 |Cat reverts to fish with properties at full value. |
+|If either property of fish is zero, fish turns to plant |Fish: food-7, bath-0 |Fish -> Plant with full values of properties |
+|If plant water reaches 0, plant turns to rock |Plant: water-0 |Plant -> rock: observe:10 |
+|If rock dies, game over. |Rock: observe-0 |"game over". |
+
 
 
 
