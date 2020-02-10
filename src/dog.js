@@ -1,10 +1,17 @@
 import { Pet } from './../src/pet.js'
 
 export class Dog extends Pet {
-    constructor(name) {
+    constructor(name, food, play, bath, discipline, potty, sleep, snuggles) {
         super(name);
+        this.food = food;
+        this.play = play;
+        this.bath = bath;
+        this.discipline = discipline; 
+        this.potty = potty;
+        this.sleep = sleep;
+        this.snuggles = snuggles;
     }
-}
+
 newDog() {
     this.name = name;
     this.food = 10;
@@ -15,3 +22,6 @@ newDog() {
     this.sleep = 10;
     this.snuggles = 10;
 } 
+
+
+}

@@ -1,5 +1,5 @@
 export class Pet {
-    constructor(name){
+    constructor(name, food, play, bath, discipline, potty, sleep, snuggles){
         this.name = name;
         this.food = food;
         this.play = play;
@@ -9,6 +9,11 @@ export class Pet {
         this.sleep = sleep;
         this.snuggles = snuggles;
     }   
+
+namePet(name) {
+    this.name = name;
+}
+
 
 feed() {
     this.food = 10;
