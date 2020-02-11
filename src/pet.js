@@ -40,11 +40,11 @@ export class Pet {
     }
 
     foodDecDog() {
-        switch(true) {
-            case (this.type === "dog"):
-                setInterval(() => {
-                    this.food--;       
-                    if(this.food <= 0) {
+        switch(this.type) {
+            case ("dog"):
+           let doggy = setInterval(() => {
+                this.food--;       
+                if(this.food <= 0) {
                     this.food = 10;
                     this.play = 10;
                     this.potty = 10;
@@ -53,34 +53,48 @@ export class Pet {
                     delete this.discipline;
                     delete this.sleep;
                     delete this.bath;
-                    clearInterval(this);
+                    clearInterval(doggy);
                     this.foodDecDog();
                     }
                 }, 5000); 
                 break;
-            case (this.type === "cat"):
-                setInterval(() => {
+            case ("cat"):
+                let kitty = setInterval(() => {
                     this.food--;
                     if(this.food <= 0) {
-                        this.food = 19;
+                        this.food = 10;
                         this.bath = 10;
-                        this.type = "fish"
+                        this.type = "fish";
                         delete this.play;
                         delete this.snuggles;
                         delete this.potty;
+                        clearInterval(kitty);
+                        this.foodDecDog();
                     }
                 }, 7000);
                 break;
-            case (this.type = "fish"):
-                setInterval(() => {
+            case ("fish"):
+                let fishy = setInterval(() => {
                     this.food--;      
                     if(this.food <= 0) {
                     this.food = 10;
-                    this.type = "plant"
+                    this.type = "plant";
                     delete this.bath;
+                    clearInterval(fishy);
+                    this.foodDecDog();
                     }
                 }, 12000);
-            
+                break;
+            case("plant"):
+            let planty = setInterval(() => {
+                this.food--;
+                if(this.food <= 0){
+                    this.food = 10;
+                    this.type = "rock";
+                    clearInterval(planty);
+                    this.foodDecDog();
+                }
+            }, 8640000);
         }           
     
     }

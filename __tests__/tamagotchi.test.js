@@ -54,15 +54,20 @@ describe("Sparky", () => {
     });
     test("if food property for type fish reduces to zero, fish turns into a plant with properties at full value", () => {
         sparky.foodDecDog();
-        // console.log(sparky);
-       jest.advanceTimersByTime(50000);
-       // sparky.food = 0;
-       console.log(sparky);
-       jest.advanceTimersByTime(70000);
+        jest.advanceTimersByTime(50000);
+        jest.advanceTimersByTime(70000);
+        jest.advanceTimersByTime(120000);
+        expect(sparky.type).toEqual("plant");
+    });
+    test("if food property for type plant reduces to zero, plant turns into a rock with observation property at 10", () => {
+        sparky.foodDecDog();
+        jest.advanceTimersByTime(50000);
+        jest.advanceTimersByTime(70000);
+        jest.advanceTimersByTime(120000);
+        jest.advanceTimersByTime(86400000);
         console.log(sparky);
-        jest.advanceTimersByTime(140000);
-        console.log(sparky);
-       expect(sparky.type).toEqual("plant");
-    })
+        expect(sparky.type).toEqual("rock");
+
+    });
 
 });
