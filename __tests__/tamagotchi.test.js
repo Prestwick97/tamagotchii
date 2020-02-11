@@ -67,7 +67,17 @@ describe("Sparky", () => {
         jest.advanceTimersByTime(86400000);
         console.log(sparky);
         expect(sparky.type).toEqual("rock");
-
+    });
+    test("if food property for type rock reduces to zero, rgame ends", () => {
+        sparky.foodDecDog();
+        jest.advanceTimersByTime(50000);
+        jest.advanceTimersByTime(70000);
+        jest.advanceTimersByTime(120000);
+        jest.advanceTimersByTime(86400000000);
+        // console.log(sparky);
+        // sparky.food = 0;
+        console.log(sparky);
+        expect(sparky.foodDecDog()).toEqual("Game over shame on you!");
     });
 
 });

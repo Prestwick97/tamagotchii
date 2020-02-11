@@ -95,7 +95,20 @@ export class Pet {
                     this.foodDecDog();
                 }
             }, 8640000);
-        }           
-    
-    }
+            break;
+            case("rock"):
+            let rocky = setInterval(() => {
+                this.food--;
+                if(this.food <= 0){
+                    this.type = "ghost";
+                    delete this.food;
+                    clearInterval(rocky);
+                    this.foodDecDog();
+                }
+            }, 864000000);  
+            return "your dog is a rock now" ; 
+            case("ghost"):
+            return "Game over shame on you!";
+        }
+    }           
 }
