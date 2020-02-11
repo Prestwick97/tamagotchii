@@ -56,12 +56,13 @@ export class Pet {
                     clearInterval(this);
                     this.foodDecDog();
                     }
-                }, 5001);
+                }, 5000); 
+                break;
             case (this.type === "cat"):
                 setInterval(() => {
                     this.food--;
                     if(this.food <= 0) {
-                        this.food = 10;
+                        this.food = 19;
                         this.bath = 10;
                         this.type = "fish"
                         delete this.play;
@@ -69,18 +70,17 @@ export class Pet {
                         delete this.potty;
                     }
                 }, 7000);
-            // case (this.type = "fish"):
-            //     setInterval(() => {
-            //         this.food--;
-            //     }, 7000);
-            //     if(this.food <= 0) {
-            //         this.food = 10;
-            //         this.bath = 10;
-            //         this.type = "fish"
-            //         delete this.play;
-            //         delete this.snuggles;
-            //         delete this.potty;
-            //     }
+                break;
+            case (this.type = "fish"):
+                setInterval(() => {
+                    this.food--;      
+                    if(this.food <= 0) {
+                    this.food = 10;
+                    this.type = "plant"
+                    delete this.bath;
+                    }
+                }, 12000);
+            
         }           
     
     }
